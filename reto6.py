@@ -37,6 +37,15 @@ class Auto:
         modelo='xxxxx'
         ano=2025
         return cls(marca,modelo,ano)
+    
+    #metodo clase creado
+    @classmethod
+    def auto_nuevo(cls):
+        marca='Ford'
+        modelo='F150'
+        ano=2023
+        kilometraje = 110
+        return cls(marca,modelo,ano,kilometraje)
 #metodo estatico
     @staticmethod
     def validar_auto(auto1,auto2):
@@ -44,6 +53,15 @@ class Auto:
             return "Tienen el mismo kilometraje"
         else:
             return"Tienen distinto los kilometrajes"
+ #metodo estatico creado
+    @staticmethod
+    def validar_ano(auto1,auto2):
+        if auto1.ano==auto2.ano:
+            return "Tienen el mismo ano estos vehiculos"
+        else:
+            return"Tienen distinto anos estos vehiculos"
+    
+        
     
         
 
@@ -52,9 +70,17 @@ class Auto:
 Prueba_auto = Auto("Chevrolet", "Joy", 2022)
 Prueba_auto2=Auto("Toyota", "M5", 2023,1000)
 
-auto_ano = Prueba_auto.auto_ano()
+auto_ano =Auto.auto_ano()
 print(f"Prueba del metodo clase --> {auto_ano.__dict__}")
+for numero in range(1,5):
+    auto_nuevo = Auto.auto_nuevo()
+    print(f"Prueba del metodo clase 2 --> {auto_nuevo.__dict__}")
+
 print(f"Prueba del metodo estatico ---> {Auto.validar_auto(Prueba_auto,Prueba_auto2)}")
+print(f"Prueba del metodo estatico 2---> {Auto.validar_ano(Prueba_auto,Prueba_auto2)}")
+
+
+
 
 
 print(Prueba_auto.__dict__)
