@@ -30,8 +30,32 @@ class Auto:
         else:
             return "¡Ya déjame descansar por favor!"
 
+#metodo clase   
+    @classmethod
+    def auto_ano(cls):
+        marca='Toyota'
+        modelo='xxxxx'
+        ano=2025
+        return cls(marca,modelo,ano)
+#metodo estatico
+    @staticmethod
+    def validar_auto(auto1,auto2):
+        if auto1.kilometraje==auto2.kilometraje:
+            return "Tienen el mismo kilometraje"
+        else:
+            return"Tienen distinto los kilometrajes"
+    
+        
+
+
 # Prueba
 Prueba_auto = Auto("Chevrolet", "Joy", 2022)
+Prueba_auto2=Auto("Toyota", "M5", 2023,1000)
+
+auto_ano = Prueba_auto.auto_ano()
+print(f"Prueba del metodo clase --> {auto_ano.__dict__}")
+print(f"Prueba del metodo estatico ---> {Auto.validar_auto(Prueba_auto,Prueba_auto2)}")
+
 
 print(Prueba_auto.__dict__)
 print(Prueba_auto.mostrar_informacion())
