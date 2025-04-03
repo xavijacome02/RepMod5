@@ -37,8 +37,17 @@ class Laptop:
             "Procesador": self.procesador,
             "Memoria RAM": "OK" if self.memoria >= 8 else "Aumentar memoria RAM",
             "Batería": 'OK' if random.choice([True, False]) else 'Cambiar batería',
+
         }
         return resultado
+    def realizar_informe_uso(self):
+        resultado_informe ={
+            "Tipo":"Generica",
+            "Uso Recomendado":"Tarea Cotidiana",
+            'Horas de uso':5,
+            "Diagnostico Actual":self.realizar_diagnostico_sistema()
+        }
+        return resultado_informe
 #metodo estatico
 @staticmethod
 def comparar_costo(Laptop1,Laptop2):

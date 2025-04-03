@@ -9,11 +9,24 @@ Laptop_Maria = Laptop("Lenovo","i7","32",600)
 
 
 laptop_juanito = Laptop_gaming('ASUS','i7','64','RTX 8GB')
-print(laptop_juanito.realizar_diagnostico_sistema())
+#print(laptop_juanito.realizar_diagnostico_sistema())
 
 
 laptop_empresarial = Laptop_Business("Dell", "i7", 16, 512, 8)
-print(laptop_empresarial.realizar_diagnostico_sistema())
+#print(laptop_empresarial.realizar_diagnostico_sistema())
+
+
+def imprimir_informe(Laptop):
+  informe = Laptop.realizar_informe_uso()
+  for clave, valor in informe.items():
+    print(f"{clave} : {valor}")
+  print("\n")
+
+print("LAPTOP PEPITO")
+imprimir_informe(Laptop_pepito)
+print("LAPTOP JUANITO")
+imprimir_informe(laptop_juanito)
+
 
 
 #for numero in range (1,1001):
